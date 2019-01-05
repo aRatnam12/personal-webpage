@@ -1,5 +1,6 @@
 {
   "name": "personal-webpage",
+  "homepage": "http://aRatnam12.github.io/personal-webpage",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
