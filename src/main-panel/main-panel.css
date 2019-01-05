@@ -1,0 +1,8 @@
+.main-panel {
+  flex: 0 0 500px;
+}
+
+.main-panel__img {
+  border-radius: 4px;
+  max-width: 500px;
+}

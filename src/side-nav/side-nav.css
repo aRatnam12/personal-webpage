@@ -1,0 +1,34 @@
+/* "side-nav">
+        <div className="side-nav__header">About</div>
+        <ul className="side-nav__items">
+          {Object.keys(navMap).map(navItem => (
+            <li
+              className={`side-nav__item${
+                navItem === this.props.activeNavItem ? "--active" */
+
+.side-nav {
+  flex: 0 0 135px;
+  padding-right: 5px;
+  margin-right: 20px;
+}
+
+.side-nav__header {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.side-nav__items {
+}
+
+.side-nav__item {
+  margin-bottom: 12px;
+  cursor: pointer;
+  color: #525750;
+}
+
+.side-nav__item:hover,
+.side-nav__item--active {
+  font-weight: 600;
+  color: black;
+}

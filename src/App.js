@@ -1,19 +1,37 @@
 // @flow
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import navMap, { type NavItem } from "./nav-map";
+import SideNav from "./side-nav";
+import MainPanel from "./main-panel";
+import "./App.css";
 
-class App extends Component<{}> {
+type State = {
+  activeNavItem: NavItem
+};
+
+class App extends React.Component<*, State> {
+  state = {
+    activeNavItem: Object.keys(navMap)[0]
+  };
+
+  handleUpdateActiveNavItem = (navItem: NavItem): void => {
+    this.setState({
+      activeNavItem: navItem
+    });
+  };
+
   render() {
+    const { activeNavItem } = this.state;
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1 className="App__welcome">Welcome to Ansh's webpage!</h1>
+        <div className="App__main">
+          <SideNav
+            activeNavItem={activeNavItem}
+            onUpdateActiveNavItem={this.handleUpdateActiveNavItem}
+          />
+          <MainPanel activeNavItem={activeNavItem} />
+        </div>
       </div>
     );
   }
